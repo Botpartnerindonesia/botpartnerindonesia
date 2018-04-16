@@ -19,6 +19,14 @@ vulture.on("message", async message => {
 
     if (message.author.bot) return;
 
+    if (message.content === `<@${vulture.id}>`) {
+        return message.channel.send(`Hi ${message.author}, My prefix is : \`${PREFIX}\``)
+    }
+
+    if (message.content === `<@!${vulture.id}>`) {
+        return message.channel.send(`Hi ${message.author}, My prefix is : \`${PREFIX}\``)
+    }
+
     if (!message.content.startsWith(PREFIX)) return;
 
     var args = message.content.substring(PREFIX.length).split(" ")
@@ -31,7 +39,7 @@ vulture.on("message", async message => {
         message.channel.send(`:ping_pong: Pong! ${latency}ms`)
         break;
     };
-    
+
 } catch(e) {
     console.error(e)
 } finally {
