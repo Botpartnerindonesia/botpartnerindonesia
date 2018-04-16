@@ -46,6 +46,10 @@ vulture.on("message", async message => {
         let latency = Date.now() - message.createdTimestamp
         message.channel.send(`:ping_pong: Pong! ${latency}ms`)
         break;
+
+        case "help":
+        message.channel.send(`HELP COMMAND NOT AVAIIBLE YET :/`)
+        break;
     };
 
 } catch(e) {
