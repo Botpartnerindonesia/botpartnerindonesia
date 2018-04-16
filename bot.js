@@ -14,18 +14,26 @@ vulture.on("ready", async () => {
     bot.user.setUsername(`Vulture`)
 });
 
+bot.on("message", async autoresponder => {
+    if (autoresponder.channel.type === 'dm') return;
+
+    if (autoresponder.author.bot) return;
+
+    if (autoresponder.content.startsWith(PREFIX)) return;
+
+    if (autoresponder.content === `<@${vulture.id}>`) {
+        return autoresponder.channel.send(`Hi ${autoresponder.author}, My prefix is : \`${PREFIX}\``)
+    }
+
+    if (autoresponder.content === `<@!${vulture.id}>`) {
+        return autoresponder.channel.send(`Hi ${autoresponder.author}, My prefix is : \`${PREFIX}\``)
+    }
+});
+
 vulture.on("message", async message => {
     if (message.channel.type === 'dm') return;
 
     if (message.author.bot) return;
-
-    if (message.content === `<@${vulture.id}>`) {
-        return message.channel.send(`Hi ${message.author}, My prefix is : \`${PREFIX}\``)
-    }
-
-    if (message.content === `<@!${vulture.id}>`) {
-        return message.channel.send(`Hi ${message.author}, My prefix is : \`${PREFIX}\``)
-    }
 
     if (!message.content.startsWith(PREFIX)) return;
 
