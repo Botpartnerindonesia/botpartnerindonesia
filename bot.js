@@ -9,7 +9,7 @@ var bot = vulture
 vulture.on("ready", async () => {
     console.log(`Logged in as : ${vulture.user.username}`)
     console.log(`I'm ready!`)
-    vulture.user.setActivity("")
+    vulture.user.setActivity(`${PREFIX}help`, {type: "LISTENING"})
     vulture.user.setStatus("online")
     bot.user.setUsername(`Vulture`)
 });
