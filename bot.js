@@ -24,12 +24,14 @@ vulture.on("message", async message => {
     var args = message.content.substring(PREFIX.length).split(" ")
 
     try {
-    switch (args[0].toLocaleLowerCase) {
+
+    switch (args[0].toLocaleLowerCase()) {
         case "ping":
         let latency = Date.now() - message.createdTimestamp
         message.channel.send(`:ping_pong: Pong! ${latency}ms`)
         break;
     };
+    
 } catch(e) {
     console.error(e)
 } finally {
