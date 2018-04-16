@@ -7,7 +7,7 @@ var vulture = new Discord.Client({disableEveryone: true})
 var bot = vulture
 
 vulture.on("ready", async () => {
-    console.log(`Logged in as : ${vulture.user.username}`)
+    console.log(`Logged in as : ${vulture.user.tag}`)
     console.log(`I'm ready!`)
     vulture.user.setActivity(`${PREFIX}help`, {type: "LISTENING"})
     vulture.user.setStatus("online")
