@@ -1,0 +1,33 @@
+const Discord = require("discord.js");
+
+const TOKEN = `${process.env.BOT_TOKEN}`;
+const PREFIX = `v-`;
+
+var vulture = new Discord.Client({disableEveryone: true})
+var bot = vulture
+
+vulture.on("ready", async () => {
+    console.log(`Logged in as : ${vulture.user.username}`)
+    console.log(`I'm ready!`)
+    vulture.user.setActivity("")
+    vulture.user.setStatus("online")
+    bot.user.setUsername(`Vulture`)
+});
+
+vulture.on("message", async message => {
+    if (message.channel.type === 'dm') return;
+
+    if (message.author.bot) return;
+
+    if (!message.content.startsWith(PREFIX)) return;
+
+    var args = message.content.substring(PREFIX.length).split(" ")
+
+    switch (args[0].toLocaleLowerCase) {
+        case "ping":
+        let latency = Date.now() - message.createdTimestamp
+        message.channel.send(`:ping_pong: Pong! ${latency}ms`)
+        break;
+    }
+});
+vulture.login(TOKEN)
