@@ -1,0 +1,22 @@
+{
+  "name": "vulture",
+  "version": "1.0.0",
+  "description": "A DISCORD BOT",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo THIS IS WORKING! (Vulture)"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UrangRobot/VultureID.git"
+  },
+  "author": "Ya gua lah!",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/UrangRobot/VultureID/issues"
+  },
+  "homepage": "https://github.com/UrangRobot/VultureID#readme",
+  "dependencies": {
+    "discord.js": "^11.3.2"
+  }
+}
