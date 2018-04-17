@@ -20,11 +20,11 @@ vulture.on("message", async autoresponder => {
 
     if (autoresponder.content.startsWith(PREFIX)) return;
 
-    if (autoresponder.content === `<@${vulture.id}>`) {
+    if (autoresponder.content === `<@${vulture.user.id}>`) {
         return autoresponder.channel.send(`Hi ${autoresponder.author}, My prefix is : \`${PREFIX}\``)
     }
 
-    if (autoresponder.content === `<@!${vulture.id}>`) {
+    if (autoresponder.content === `<@!${vulture.user.id}>`) {
         return autoresponder.channel.send(`Hi ${autoresponder.author}, My prefix is : \`${PREFIX}\``)
     }
 });
