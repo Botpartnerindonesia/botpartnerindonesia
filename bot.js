@@ -4,7 +4,6 @@ const TOKEN = `${process.env.BOT_TOKEN}`;
 const PREFIX = `v-`;
 
 var vulture = new Discord.Client({disableEveryone: true})
-var bot = vulture
 
 vulture.on("ready", async () => {
     console.log(`Logged in as : ${vulture.user.tag}`)
@@ -14,7 +13,7 @@ vulture.on("ready", async () => {
     bot.user.setUsername(`Vulture`)
 });
 
-bot.on("message", async autoresponder => {
+vulture.on("message", async autoresponder => {
     if (autoresponder.channel.type === 'dm') return;
 
     if (autoresponder.author.bot) return;
